@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>shampoo — ความหอมสะอาดที่พกพาไปได้ทุกที่</title>
+  <meta name="description" content="shampoo ความหอมสะอาดเหมือนเพิ่งสระผมเสร็จใหม่ๆ ที่พกพาไปเติมความมั่นใจได้ทุกที่ตลอดวัน">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* สไตล์เฉพาะหน้าแรก (ใช้ตัวแปรจาก style.css) */
+    .hero--full {
+      min-height: calc(100vh - 78px);
+      min-height: calc(100svh - 78px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-block: var(--space-xl);
+    }
+
+    .hero--full h1 {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(1.9rem, 4.2vw, 3.2rem);
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+    }
+
+    .mood-card {
+      display: block;
+      background: var(--color-cream);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .mood-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-4px);
+    }
+
+    .mood-card h3 { margin-top: var(--space-sm); }
+
+    .mood-card .mood-line {
+      margin: var(--space-xs) auto var(--space-sm);
+    }
+
+    .mood-card p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">shampoo</a>
+      <nav class="nav">
+        <a href="index.html" class="active">หน้าแรก</a>
+        <a href="product.html">สินค้า</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero hero--full">
+      <div class="container hero__inner">
+        <span class="eyebrow">shampoo</span>
+        <h1>ความหอมสะอาดเหมือนเพิ่งสระผมเสร็จใหม่ๆ ที่พกพาไปเติมความมั่นใจได้ทุกที่ตลอดวัน</h1>
+        <hr class="divider">
+        <a href="product.html" class="btn">ดูสินค้าทั้งหมด</a>
+      </div>
+    </section>
+
+    <!-- Moods -->
+    <section class="section section--white" id="moods">
+      <div class="container">
+        <div class="section__header">
+          <span class="eyebrow">Moods</span>
+          <h2>เลือกกลิ่นที่เป็นคุณ</h2>
+          <hr class="divider">
+        </div>
+
+        <div class="features">
+          <a class="feature mood-card" href="product.html?mood=fresh" data-mood="fresh">
+            <span class="mood-dot mood-dot--fresh"></span>
+            <h3>Fresh</h3>
+            <span class="mood-line mood-line--fresh"></span>
+            <p>หอมสะอาดเหมือนลมยามเช้า ปลุกความตื่นตัวให้พร้อมลุยตลอดวัน</p>
+          </a>
+
+          <a class="feature mood-card" href="product.html?mood=sweet" data-mood="sweet">
+            <span class="mood-dot mood-dot--sweet"></span>
+            <h3>Sweet</h3>
+            <span class="mood-line mood-line--sweet"></span>
+            <p>หอมหวานละมุนไม่เลี่ยน อบอุ่นอ่อนโยนเหมือนอ้อมกอดนุ่มๆ</p>
+          </a>
+
+          <a class="feature mood-card" href="product.html?mood=confident" data-mood="confident">
+            <span class="mood-dot mood-dot--confident"></span>
+            <h3>Confident</h3>
+            <span class="mood-line mood-line--confident"></span>
+            <p>หอมสะอาดมั่นคง เติมความมั่นใจก่อนก้าวเข้าสู่ทุกการพบเจอ</p>
+          </a>
+
+          <a class="feature mood-card" href="product.html?mood=romance" data-mood="romance">
+            <span class="mood-dot mood-dot--romance"></span>
+            <h3>Romance</h3>
+            <span class="mood-line mood-line--romance"></span>
+            <p>หอมนุ่มลึกชวนอบอุ่น เติมเสน่ห์ให้น่าเข้าใกล้อย่างเป็นธรรมชาติ</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="logo">shampoo</span>
+      <p>&copy; 2026 shampoo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

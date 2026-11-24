@@ -1,0 +1,42 @@
+[
+  {
+    "id": "fresh-30",
+    "name": "น้ำหอมฉีดตัว Fresh เล็ก",
+    "mood": "fresh",
+    "type": "shampoo",
+    "size": "30ml",
+    "price": 89,
+    "image": "images/fresh.jpg",
+    "description": "กลิ่นสดชื่นสะอาดสะอ้าน ขนาดพกพา เหมาะสำหรับเติมความมั่นใจระหว่างวัน"
+  },
+  {
+    "id": "fresh-100",
+    "name": "น้ำหอมฉีดตัว Fresh ใหญ่",
+    "mood": "fresh",
+    "type": "shampoo",
+    "size": "100ml",
+    "price": 199,
+    "image": "images/fresh.jpg",
+    "description": "กลิ่นสดชื่นสะอาดสะอ้าน ขนาดคุ้มค่า สำหรับใช้ที่บ้านหรือเป็นของประจำตัว"
+  },
+  {
+    "id": "sweet-30",
+    "name": "น้ำหอมฉีดตัว Sweet เล็ก",
+    "mood": "sweet",
+    "type": "shampoo",
+    "size": "30ml",
+    "price": 89,
+    "image": "images/sweet.jpg",
+    "description": "กลิ่นหวานนุ่มละมุน ขนาดพกพา เหมาะสำหรับเติมความหอมได้ทุกที่"
+  },
+  {
+    "id": "sweet-100",
+    "name": "น้ำหอมฉีดตัว Sweet ใหญ่",
+    "mood": "sweet",
+    "type": "shampoo",
+    "size": "100ml",
+    "price": 199,
+    "image": "images/sweet.jpg",
+    "description": "กลิ่นหวานนุ่มละมุน ขนาดคุ้มค่า สำหรับใช้ที่บ้านหรือเป็นของประจำตัว"
+  }
+]

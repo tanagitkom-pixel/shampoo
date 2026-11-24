@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>รายการสั่งซื้อ — shampoo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* สไตล์ตารางสำหรับหน้า admin (ใช้ตัวแปรจาก style.css) */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--color-white);
+      border: var(--line-width) solid var(--color-line);
+    }
+
+    #ordersTable {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    #ordersTable th,
+    #ordersTable td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: var(--line-width) solid var(--color-line);
+    }
+
+    #ordersTable th {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent-dark);
+      background: var(--color-cream-deep);
+      white-space: nowrap;
+    }
+
+    #ordersTable td { color: var(--color-ink-soft); }
+
+    #ordersTable tbody tr:last-child td { border-bottom: 0; }
+
+    #ordersTable tbody tr:hover td { background: var(--color-cream); }
+
+    #ordersTable td:nth-child(5) {
+      text-align: right;
+      white-space: nowrap;
+      color: var(--color-accent-dark);
+    }
+
+    #ordersTable th:nth-child(5) { text-align: right; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">shampoo</a>
+      <nav class="nav">
+        <a href="index.html">หน้าแรก</a>
+        <a href="product.html">สินค้า</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <span class="eyebrow">Admin</span>
+          <h1>รายการสั่งซื้อ</h1>
+          <hr class="divider">
+        </div>
+
+        <div class="table-wrap">
+          <table id="ordersTable">
+            <thead>
+              <tr>
+                <th>วันเวลา</th>
+                <th>ชื่อลูกค้า</th>
+                <th>เบอร์โทร/Line</th>
+                <th>รายการสินค้า</th>
+                <th>จำนวนเงินรวม</th>
+                <th>หมายเหตุ</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="logo">shampoo</span>
+      <p>&copy; 2026 shampoo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

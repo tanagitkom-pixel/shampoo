@@ -1,0 +1,576 @@
+/* ==========================================================================
+   shampoo — Premium Minimal Theme
+   โทน: ขาว-ครีม-เบจเข้ม | accent: ทอง/บรอนซ์อ่อน
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&family=Sarabun:wght@300;400;500&display=swap");
+
+/* ---------- Design Tokens ---------- */
+:root {
+  /* สีพื้นหลัง */
+  --color-white: #ffffff;
+  --color-cream: #faf6ef;
+  --color-cream-deep: #f1eadc;
+  --color-beige: #d9ccb4;
+  --color-beige-dark: #a89878;
+
+  /* สีตัวอักษร */
+  --color-ink: #2b2620;
+  --color-ink-soft: #5c5347;
+  --color-ink-muted: #8b8070;
+
+  /* สีเน้น: ทอง/บรอนซ์อ่อน */
+  --color-accent: #b08d57;
+  --color-accent-dark: #8c6d3f;
+  --color-accent-light: #d9c39a;
+
+  /* เส้นขอบ */
+  --color-line: #cfc3ad;
+  --color-line-dark: #3a332a;
+
+  /* สีของ mood (ใช้เป็นจุดเล็กๆ เท่านั้น) */
+  --mood-fresh: #2f5d46;
+  --mood-sweet: #7a5c8e;
+
+  /* ฟอนต์ */
+  --font-display: "Cormorant Garamond", "Noto Serif Thai", Georgia, serif;
+  --font-serif: "Noto Serif Thai", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Sarabun", "Helvetica Neue", Arial, sans-serif;
+
+  /* Spacing (เว้นระยะเยอะให้ดูโปร่ง) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
+  --space-2xl: 10rem;
+
+  /* อื่นๆ */
+  --container: 1120px;
+  --radius: 2px;
+  --line-width: 1px;
+  --transition: 0.35s ease;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--color-ink);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- Typography ---------- */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+h3 { font-size: 1.35rem; }
+h4 { font-size: 1.1rem; }
+
+p {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-ink-soft);
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+}
+
+.lead {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 2;
+  color: var(--color-ink-soft);
+}
+
+.text-center { text-align: center; }
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+.section--cream-deep { background: var(--color-cream-deep); }
+.section--white { background: var(--color-white); }
+
+.section__header {
+  max-width: 640px;
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+}
+
+/* เส้นทองสั้นๆ ใต้หัวข้อ */
+.divider {
+  display: block;
+  width: 48px;
+  height: var(--line-width);
+  margin: var(--space-sm) auto var(--space-md);
+  background: var(--color-accent);
+  border: 0;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 246, 239, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: var(--line-width) solid var(--color-line);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.25rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav a {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--color-ink-soft);
+  padding-bottom: 4px;
+  border-bottom: var(--line-width) solid transparent;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: var(--space-2xl);
+  text-align: center;
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream) 100%);
+}
+
+.hero__inner {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.hero h1 { margin-bottom: var(--space-md); }
+
+.hero p {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------- Buttons (เส้นบาง สีเข้มนุ่มตา) ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.95rem 2.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: transparent;
+  border: var(--line-width) solid var(--color-line-dark);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition),
+    border-color var(--transition);
+}
+
+.btn:hover {
+  background: var(--color-line-dark);
+  color: var(--color-cream);
+}
+
+.btn--accent {
+  border-color: var(--color-accent);
+  color: var(--color-accent-dark);
+}
+
+.btn--accent:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn--solid {
+  background: var(--color-line-dark);
+  color: var(--color-cream);
+}
+
+.btn--solid:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: var(--line-width) solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* ---------- Product Grid & Card ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-lg) var(--space-md);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: var(--line-width) solid var(--color-line);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.product-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.product-card__image {
+  aspect-ratio: 1 / 1;
+  background: var(--color-cream-deep);
+  overflow: hidden;
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-md);
+}
+
+.product-card__mood {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: var(--space-xs);
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.product-card__name {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.product-card__size {
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.product-card__desc {
+  flex: 1;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-sm);
+  border-top: var(--line-width) solid var(--color-line);
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-accent-dark);
+}
+
+.price small {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--color-ink-muted);
+  margin-left: 0.25rem;
+}
+
+/* ---------- Mood Accents (แตะเบาๆ เป็นจุดเล็กๆ เท่านั้น) ---------- */
+.mood-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-beige-dark);
+}
+
+.mood-dot--fresh { background: var(--mood-fresh); }
+.mood-dot--sweet { background: var(--mood-sweet); }
+
+/* เส้นสั้นใต้หัวข้อ ตาม mood */
+.mood-line {
+  display: block;
+  width: 36px;
+  height: 2px;
+  margin-top: var(--space-xs);
+  background: var(--color-beige-dark);
+}
+
+.mood-line--fresh { background: var(--mood-fresh); }
+.mood-line--sweet { background: var(--mood-sweet); }
+
+/* สีตัวอักษรของ mood (ใช้กับไอคอน/ป้ายเล็กๆ) */
+.mood-text--fresh { color: var(--mood-fresh); }
+.mood-text--sweet { color: var(--mood-sweet); }
+
+/* ใช้ data-mood บน element ก็ได้ */
+[data-mood="fresh"] .mood-accent { background: var(--mood-fresh); }
+[data-mood="sweet"] .mood-accent { background: var(--mood-sweet); }
+
+/* ---------- Filter / Tabs ---------- */
+.filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.filter button {
+  padding: 0 0 6px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  background: none;
+  border: 0;
+  border-bottom: var(--line-width) solid transparent;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.filter button:hover,
+.filter button.active {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ---------- Feature / Info Blocks ---------- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg) var(--space-md);
+}
+
+.feature {
+  text-align: center;
+  padding: var(--space-md);
+  border: var(--line-width) solid var(--color-line);
+}
+
+.feature__icon {
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+/* ---------- Forms ---------- */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.9rem 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-ink);
+  background: transparent;
+  border: 0;
+  border-bottom: var(--line-width) solid var(--color-line-dark);
+  border-radius: 0;
+  transition: border-color var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-bottom-color: var(--color-accent);
+}
+
+label {
+  display: block;
+  margin-top: var(--space-md);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding-block: var(--space-lg);
+  text-align: center;
+  background: var(--color-line-dark);
+  color: var(--color-beige);
+}
+
+.site-footer .logo { color: var(--color-cream); }
+
+.site-footer p {
+  margin-top: var(--space-sm);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--color-beige-dark);
+}
+
+/* ---------- Utilities ---------- */
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.hidden { display: none !important; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  :root {
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+    --space-2xl: 7rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  :root {
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    --space-2xl: 5rem;
+  }
+
+  .container {
+    padding-inline: 1.25rem;
+  }
+
+  .site-header__inner {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .logo { font-size: 1.35rem; letter-spacing: 0.24em; }
+
+  .nav { gap: var(--space-sm); }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .product-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .filter { gap: var(--space-sm); }
+}
+
+/* ลดการเคลื่อนไหวสำหรับผู้ที่ตั้งค่าไว้ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
